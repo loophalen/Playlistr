@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="MyApp">
   <head>
-<<<<<<< HEAD
-    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  -->
-=======
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
->>>>>>> 16e78a9852940c65ccaabff5adeb58458852131a
     <meta charset="utf-8">
     <title>Playlistr</title>
     <!-- Import JS -->
@@ -53,46 +49,6 @@
       <div class="main container" ng-if="!ctrl.viewDetails">
         <h1 class="display-4">{{ctrl.h1}}</h1>
 
-
-        <!-- create user -->
-        <!-- <h2 ng-if="!ctrl.loggedInUserData">Sign Up</h2>
-        <form ng-if="!ctrl.loggedInUserData" name="signUpForm" ng-submit="ctrl.createUser()">
-          <input data-id="create-user" type="text" placeholder=" Create Username" ng-model="ctrl.username" />
-          <input data-id="create-password" type="password" placeholder="Create Password" ng-model="ctrl.password" />
-          <input type="submit" value="Sign Up" />
-        </form> -->
-
-        <!-- <button class="btn btn-primary createuserbutton" type="button" data-toggle="collapse" data-target="createuser">Sign Up</button>
-        <div class="collapse" id="createuser">
-          <div class="create-username">
-            <div class="create-password">
-              <form name="signUp" ng-submit="ctrl.createUser()">
-                <div class="form-group">
-                  <label for="create-username">Sign Up</label>
-                  <input id="create-password" type="text" placeholder="password " ng-model="ctrl.createUser" class="form-control">
-                </div>
-                <button type="submit">Sign Up</button>
-              </form>
-            </div> -->
-
-        <!-- Login user -->
-        <!-- <h2 ng-if="!ctrl.loggedInUserData">Login</h2>
-        <form ng-if="!ctrl.loggedInUserData" name="loginForm" ng-submit="ctrl.logIn()">
-          <input type="text" placeholder="Username" ng-model="ctrl.loginUsername" />
-          <input type="password" placeholder="Password" ng-model="ctrl.loginPassword" />
-          <input type="submit" value="Login" />
-        </form> -->
-
-
-        <!-- logout user -->
-
-
-        <!-- <div class="btn-logout">
-          <form ng-if="ctrl.loggedInUserData" ng-submit="ctrl.logOutUser()" method="POST">
-            <input type="submit" value="Logout"/>
-          </form>
-        </div> -->
-
         <!-- Create Playlist Section -->
         <div class="create_playlist" ng-if="ctrl.loggedInUserData">
           <h2>Create Playlist</h2>
@@ -103,17 +59,6 @@
         </div>
 
         <br>
-
-        <!-- Creates List of All Playlist -->
-        <!-- <div ng-if="!ctrl.addTrack">
-          <div ng-if="ctrl.loggedInUserData" class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">My Playlist</button>
-            <button type="button" class="btn btn-secondary">All Playlist</button>
-            <button type="button" class="btn btn-secondary">Favorites</button>
-          </div>
-          <label for="Search">
-            Search <input type='text' placeholder='' ng-model='searchBox'>
-          </label> -->
 
           <nav class="navbar navbar-light bg-light">
             <!-- <div class="collapse navbar-collapse" id="navbarText"> -->
@@ -161,7 +106,6 @@
           <button ng-if="ctrl.currentlyLiked && ctrl.loggedInUserData" ng-click="ctrl.unlikePlaylist()" class="btn btn-light btn-xs">Unlike</button>
         </div>
         <!-- Add track section, only visible if you click the button -->
-        <!-- <button class="btn btn-primary addtrackbutton" type="button" data-toggle="collapse" data-target="#addTrackSection" ng-if="ctrl.playlist.creator === ctrl.loggedInUserData.username">ADD TRACK</button> -->
         <img id="addTrack" src="/assets/addTrackButton.png" ng-if="ctrl.playlist.creator === ctrl.loggedInUserData.username" data-toggle="collapse" data-target="#addTrackSection">
         <div class="collapse" id="addTrackSection">
           <div class="track-search-section">

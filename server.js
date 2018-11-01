@@ -11,19 +11,16 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// Middleware
 app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.json());
 app.use(express.static("public"));
 
-//Get Routes
-//Route checks to see if the user is logged in
-//If the user is logged in, send the user from the current session as a response
-//If the user is NOT logged in, send an error message
+// Checks to see if the user is logged in
 app.get("/log", (req, res) => {
   if(req.session.currentUser){
-    console.log('current user is', req.session.currentUser);
     res.json(req.session.currentUser);
   } else {
     res.status(401).json({
@@ -33,11 +30,7 @@ app.get("/log", (req, res) => {
   }
 });
 
-// app.get('/', (req, res) => {
-//   res.send('index')
-// });
-
-//USER CONTROLLER
+// Controllers for other routes
 const userController = require('./controllers/users.js');
 app.use('/users', userController);
 const playlistController = require('./controllers/playlist.js');
@@ -49,8 +42,7 @@ app.listen(port, () => {
   console.log('listening......');
 });
 
-//Mongoose Connection
-//mongoose.connect("mongodb://localhost:27017/Music", { useNewUrlParser: true } );
+// Connect to Mongo
 mongoose.connect(mongoUri);
 mongoose.connection.once("open", () => {
   console.log("Connected to mongoose!");

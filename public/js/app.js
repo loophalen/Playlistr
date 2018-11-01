@@ -1,9 +1,7 @@
 const app = angular.module('MyApp', []);
 
 app.controller('MainController', ['$http', function($http){
-  /* ---------------------
-  Global variables
-   --------------------- */
+
   this.h1 = 'Playlistr'
   this.playlist = {}
   this.playlists = []
@@ -20,6 +18,7 @@ app.controller('MainController', ['$http', function($http){
 
   this.tracks = [];
   this.foundMusic = null;
+  
   // addTrack is true when user is adding a track to the playlist
   this.addTrack = false;
 
